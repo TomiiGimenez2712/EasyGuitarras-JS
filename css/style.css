@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Spinnaker&display=swap");
+/*fuente de google*/
+/* font-family: 'Spinnaker', sans-serif; */
+.main {
+  background-color: gainsboro;
+  color: black; }
+
+header {
+  width: 100%; }
+  header img {
+    width: 100%;
+    height: 10vh; }
+  header nav div ul {
+    margin: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row; }
+    header nav div ul li a {
+      color: #ffae00;
+      font-size: 20px; }
+      header nav div ul li a:hover {
+        color: #ffae00;
+        font-size: 21px; }
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row; }
+  footer section {
+    text-align: center; }
+    footer section img {
+      width: 60px;
+      height: 60px;
+      transition: 0.5s; }
+      footer section img:hover {
+        transform: scale(1.1); }
+    footer section a {
+      color: white; }
+      footer section a:hover {
+        color: #ffae00; }
+
+.enviar {
+  background-color: gainsboro;
+  color: black; }
+  .enviar:hover {
+    color: #ffae00; }
+
+.categorias div a, .productos > div {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.btn-carrito {
+  position: fixed;
+  width: 65px;
+  height: 65px;
+  line-height: 65px;
+  bottom: 40px;
+  right: 40px;
+  background: #ffae00;
+  color: #ffff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 40px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100; }
+  .btn-carrito:hover {
+    text-decoration: none;
+    color: #ffae00;
+    background-color: #ffff; }
+
+body {
+  margin: 0;
+  padding: 2px;
+  background-color: black;
+  color: white;
+  font-family: 'Spinnaker', sans-serif; }
+  body #navbarNav ul li a:hover {
+    color: #ffae00;
+    font-size: 21px; }
+
+/*------------HERO------------*/
+.hero {
+  width: 100%;
+  height: 80vh;
+  background-image: url(../img/Backgroung.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column; }
+  .hero h1 {
+    font-size: 70px;
+    letter-spacing: 5px;
+    line-height: 50px;
+    padding-bottom: 25px; }
+  .hero div a {
+    width: 300px;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 3px; }
+    .hero div a:hover {
+      color: #ffae00; }
+
+/*------------CATEGORIAS------------*/
+.categorias {
+  width: 100%;
+  background-color: black;
+  /*grids*/
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 410px;
+  grid-template-areas: "cat1 cat2 cat3"; }
+  .categorias div {
+    transition: 1s; }
+    .categorias div:hover {
+      transform: scale(1.03); }
+    .categorias div a {
+      position: relative;
+      top: 150px;
+      text-decoration: none;
+      color: white;
+      font-size: 60px; }
+
+.cat1 {
+  grid-area: cat1;
+  width: 100%;
+  background-image: url(../img/clasica.jpg);
+  background-size: cover;
+  background-position: center; }
+
+.cat2 {
+  grid-area: cat2;
+  width: 100%;
+  background-image: url(../img/electrica.jpg);
+  background-size: cover;
+  background-position: center; }
+
+.cat3 {
+  grid-area: cat3;
+  width: 100%;
+  background-image: url(../img/acustica.jpg);
+  background-size: cover;
+  background-position: center; }
+
+/*----------------Grids------------*/
+/*------------MAS VENDIDOS------------*/
+.productos {
+  width: 100%;
+  background-color: gainsboro;
+  color: black; }
+  .productos h2 {
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center; }
+  .productos > div {
+    flex-wrap: wrap; }
+    .productos > div div {
+      width: 300px;
+      height: 380px;
+      border: 1px solid white;
+      margin: 10px;
+      /*Borrar*/
+      text-align: center;
+      border-radius: 5px;
+      background-color: white;
+      color: grey;
+      font-weight: 200;
+      transition: 0.7s; }
+      .productos > div div:hover {
+        transform: scale(1.05); }
+      .productos > div div img {
+        height: 300px; }
+      .productos > div div h3 {
+        margin-bottom: 10px;
+        font-size: 20px; }
+      .productos > div div a {
+        text-decoration: none;
+        background-color: black;
+        color: white;
+        padding: 5px;
+        border-radius: 5px; }
+        .productos > div div a:hover {
+          color: #ffae00; }
+
+.categoria_productos {
+  font-size: 30px;
+  text-align: center;
+  text-decoration: underline; }
+
+/*-------------Media Cueris---------------*/
+@media screen and (max-width: 1111px) {
+  footer {
+    flex-direction: column; } }
+
+@media screen and (max-width: 600px) {
+  .hero div h1 {
+    text-align: center;
+    font-size: 60px; }
+  .hero div a {
+    font-size: 20px; } }
+
+@media screen and (max-width: 1200px) {
+  .categorias {
+    grid-template-columns: 1fr;
+    grid-template-rows: 320px 320px 320px;
+    grid-template-areas: "cat1" "cat2" "cat3"; } }
+
+@media screen and (max-width: 500px) {
+  .categorias div a {
+    font-size: 40px; } }
+
+@media screen and (max-width: 1040px) {
+  .form {
+    flex-direction: column;
+    align-items: center; } }
+
+@media screen and (max-width: 1200px) {
+  .nos {
+    flex-direction: column;
+    align-items: center; } }
+
+@media screen and (max-width: 714px) {
+  .cont div img {
+    width: 480px; } }
+
+@media screen and (max-width: 500px) {
+  .cont div img {
+    width: 320px; } }
+
+@media screen and (max-width: 490px) {
+  .galeria {
+    width: 95vw;
+    margin-right: 2.5vw;
+    margin-left: 2.5vw; } }
+
+@media screen and (max-width: 600px) {
+  .preguntas {
+    width: 95vw;
+    margin-right: 2.5vw;
+    margin-left: 2.5vw; } }

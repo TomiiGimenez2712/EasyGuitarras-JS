@@ -1,0 +1,24 @@
+@import "../base/variables.scss";
+@import "../base/mixins";
+header{
+    width: 100%;
+    img{width:100%; height: 10vh;}
+    nav{
+        div{
+            ul{
+                margin: 10px;
+                @include flex (flex, space-evenly, center, row);
+                li{
+                    a{
+                        color: $color-amarillo;
+                        font-size: 20px;
+                        &:hover{
+                            color: $color-amarillo;
+                            font-size: 21px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

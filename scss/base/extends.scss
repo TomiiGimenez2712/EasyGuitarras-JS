@@ -1,0 +1,12 @@
+@import "../base/variables.scss";
+
+%flex.center{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%media.clumn{
+    flex-direction: column;
+    align-items: center;
+}
