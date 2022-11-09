@@ -1,5 +1,4 @@
-let ocultarcarrito = document.getElementById("carrito");
-ocultarcarrito.style.display = "none"
+
 
 let carrito= [];
 let btn_compra = document.getElementsByClassName("botonCompra");
@@ -89,71 +88,3 @@ btn_carrito.addEventListener("click", function(){
     }
 
 } )
-
-
-
-
-
-
-// let mostrar_carrito = document.getElementById("mostrar_carrito");
-// let modalContainer = document.getElementById("modal-container");
-
-// //----------------boton del carrito----------------------
-// mostrar_carrito.addEventListener("click", function(){
-//     console.log("holaaaa funciona");
-//     modalContainer.style.display = "flex";
-//     modalContainer.innerHTML="";
-
-
-
-
-//     //----------------Header----------------------
-
-//     let modalHeader = document.createElement("div");
-//     modalHeader.className = "madal-header"
-//     modalHeader.innerHTML= `<h1  class= "modal-header-title">Carrito</h1>`;
-
-//     modalContainer.append(modalHeader);
-
-//     let modalbutton =document.createElement("button");
-//     modalbutton.innerText ="x";
-//     modalbutton.className ="modal-header-button btn btn-danger";
-//     modalHeader.append(modalbutton);
-
-
-//     modalbutton.addEventListener("click", function(){
-//         modalContainer.style.display = "none";
-
-
-//     });
-
-//     //----------------Body----------------------
-//     //llamr al carrito con un forEach para recorrerlo
-//     function mostrar_carrito( producto ){
-//     let carritoContent = document.createElement("div");
-//         carritoContent.className ="modal-content";
-//         carritoContent.innerHTML = `<img src="${producto.imagen}">
-//         <h3>${producto.nombre}</h3>
-//         <p>${producto.cantidad}</p>
-//         <p>${producto.precio}</p>`;// arreglaar------------
-//         modalContainer.append(carritoContent)
-//     }
-
-
-    
-
-    
-
-//     //----------------footer----------------------
-//     //crear una variable todal que tega la suma de todos los productos
-//     let totalBuying = document.createElement("div")
-//     totalBuying.className ="total-content"
-//     totalBuying.innerHTML =`total a paga: ${total}$` //total es la variable donde esta el precio total
-//     modalContainer.append(totalBuying);
-
-
-
-    
-    
-    
-// });
