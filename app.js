@@ -16,16 +16,11 @@ function agregar_a_carrito(e){
     let padre =hijo.parentNode;
     let abuelo =padre.parentNode;
 
-    console.log(hijo);
-    console.log(padre);
 
     let nombre_producto= padre.querySelector("h3").textContent;
     let precio_producto= padre.querySelector("span").textContent;
     let img_producto= padre.querySelector("img").src;
 
-    console.log(nombre_producto);
-    console.log(precio_producto);
-    console.log(img_producto);
     
 
     let producto ={
@@ -36,20 +31,44 @@ function agregar_a_carrito(e){
         cantidad:1
     }
 
+
     carrito.push(producto);
-    mostrar_carrito(producto);
+
+
+
+
+    //LOCAL STORAGE
+
+    let carrito_JSON= JSON.stringify(carrito)
+    localStorage.setItem("carrito", carrito_JSON);
+    console.log(carrito_JSON) //borrar
+
+
+    let recuperando_carrito =localStorage.getItem("carrito");
+    recuperando_carrito= JSON.parse(recuperando_carrito);
+    
+    console.log(recuperando_carrito);
+    console.log(recuperando_carrito.precio);
+    let carroPrecio = recuperando_carrito[0].precio
+    console.log(carroPrecio)
+
+
+
+    mostrar_carrito(recuperando_carrito);
+
+
+
 }
 
-function mostrar_carrito( producto ){
+function mostrar_carrito(producto){
 
     let fila = document.createElement("tr");
     fila.innerHTML = `<td><img src="${producto.imagen}"></td>
-        <td>${producto.nombre}</td>
-        <td>${producto.cantidad}</td>
-        <td>${producto.precio}</td>
+        <td>${recuperando_carrito[0].nombre}</td>
+        <td>${recuperando_carrito[0].cantidad}</td>
+        <td>${recuperando_carrito[0].precio}</td>
         <td><button class="btn btn-danger borrar_elemento">Borrar</td>`;
-    
-        console.log( fila );      
+
         let tabla = document.getElementById("tbody");
         tabla.append( fila );
     
