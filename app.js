@@ -43,43 +43,43 @@ function agregar_a_carrito(e){
     localStorage.setItem("carrito", carrito_JSON);
     console.log(carrito_JSON) //borrar
 
-
     let recuperando_carrito =localStorage.getItem("carrito");
+        
     recuperando_carrito= JSON.parse(recuperando_carrito);
-    
+
+
+
     console.log(recuperando_carrito);
-    console.log(recuperando_carrito.precio);
-    let carroPrecio = recuperando_carrito[0].precio
-    console.log(carroPrecio)
+    carrito = recuperando_carrito;
+    escribircarrito()
+    
 
-
-
-    mostrar_carrito(recuperando_carrito);
-
-
-
+function escribircarrito(){
+    for(let producto_guardado of carrito){
+        mostrar_carrito(producto_guardado);
+        function mostrar_carrito(producto_guardado){
+    
+            let fila = document.createElement("tr");
+            fila.innerHTML = `<td><img src="${producto_guardado.imagen}"></td>
+                <td>${producto_guardado.nombre}</td>
+                <td>${producto_guardado.cantidad}</td>
+                <td>${producto_guardado.precio}</td>
+                <td><button class="btn btn-danger borrar_elemento">Borrar</td>`;
+            
+                console.log( fila );      
+                let tabla = document.getElementById("tbody");
+                tabla.append( fila );
+            
+                let btn_borrar = document.querySelectorAll(".borrar_elemento");
+            
+                for( let boton of btn_borrar){
+                    boton.addEventListener("click" , borrar_producto);
+                }
+            }
+    }
 }
 
-function mostrar_carrito(producto){
 
-    let fila = document.createElement("tr");
-    fila.innerHTML = `<td><img src="${producto.imagen}"></td>
-        <td>${recuperando_carrito[0].nombre}</td>
-        <td>${recuperando_carrito[0].cantidad}</td>
-        <td>${recuperando_carrito[0].precio}</td>
-        <td><button class="btn btn-danger borrar_elemento">Borrar</td>`;
-
-        let tabla = document.getElementById("tbody");
-        tabla.append( fila );
-    
-        let btn_borrar = document.querySelectorAll(".borrar_elemento");
-    
-        for( let boton of btn_borrar){
-    
-            boton.addEventListener("click" , borrar_producto);
-        }
-    
-    }
 
 function borrar_producto(e){
 
@@ -87,23 +87,11 @@ function borrar_producto(e){
     let padre= hijo.parentNode;
     let abuelo = padre.parentNode;
 
+    localStorage.removeItem(e)
     abuelo.remove();
+    
 
 }
 
 
-let btn_carrito = document.getElementById("mostrar_carrito");
-
-btn_carrito.addEventListener("click", function(){
-
-
-
-    if(ocultarcarrito.style.display != "none"){
-
-        ocultarcarrito.style.display = "none";
-    }
-    else{
-        ocultarcarrito.style.display = "flex";
-    }
-
-} )
+}
