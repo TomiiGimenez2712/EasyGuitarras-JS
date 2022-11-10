@@ -173,15 +173,21 @@
 
             <div class="modal" id="ventanaModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
             
-                    <div class="modar-content bg-dark">
-                        <div class="modal-header">
-                            <h5 id="tituloVentana">Carrito</h5>
-                            <button class="close" data-dismiss="modal" aria-label="Cerrar">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                    <div class="modar-content contenedorCarrito">
                             <div class=" modal-body container" id="carrito">
                                 <table class="table text-white bg-dark">
-                                    <thead>
+                                    <thead class="bg-dark">
+                                        <tr class="bg-dark">
+                                            <td><h5 id="tituloVentana" class="bg-dark">Carrito</h5></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <button class="close bg-light" data-dismiss="modal" aria-label="Cerrar">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </td>
+                                        </tr>
                                         <tr>
                                             <td>Producto</td>
                                             <td>Nombre</td>
@@ -193,9 +199,6 @@
                                     <tbody id="tbody"></tbody>
                                 </table>
                             </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-warning" type="button" data-dismiss="modal">Cerrar</button>
-                                <button class="btn btn-success" type="button">Aceptar</button>
         
                             </div>
                         </div>

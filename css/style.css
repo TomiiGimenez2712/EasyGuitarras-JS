@@ -71,6 +71,10 @@ footer {
     color: #ffae00;
     background-color: #ffff; }
 
+.tituloVentana {
+  font-size: 20px;
+  font-weight: bold; }
+
 body {
   margin: 0;
   padding: 2px;
