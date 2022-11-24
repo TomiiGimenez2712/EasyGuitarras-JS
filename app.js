@@ -1,14 +1,13 @@
 
 //API de cotización dolar blue
-
+let dolar= 0
 fetch("https://api.bluelytics.com.ar/v2/latest",{
 })
 .then((response)=> response.json())
 .then((data)=>{
     dolar= data.blue.value_sell;
 
-
-
+})
 let carrito= [];
 
 let btn_compra = document.getElementsByClassName("botonCompra");
@@ -27,6 +26,7 @@ let btn_compra = document.getElementsByClassName("botonCompra");
         let precio_producto= padre.querySelector("span").textContent;
         let img_producto= padre.querySelector("img").src;
         precio_producto=(parseInt(precio_producto)*dolar)
+
         
     
         let producto ={
@@ -63,16 +63,17 @@ let btn_compra = document.getElementsByClassName("botonCompra");
     
     //mostar carrito
     function mostrar_carrito(carrito){
+        let tabla = document.getElementById("tbody");
+        tabla.innerHTML = ``
+
         carrito.forEach(item => {
-    
             let fila = document.createElement("tr");
-        fila.innerHTML = `<td><img src="${item.imagen}"></td>
+            fila.innerHTML = `<td><img src="${item.imagen}"></td>
             <td>${item.nombre}</td>
             <td>${item.cantidad}</td>
             <td>${item.precio}</td>
             <td><button class="btn btn-danger borrar_elemento">Borrar</td>`;
         
-            let tabla = document.getElementById("tbody");
             tabla.append( fila );
     
             //borrar elemento
@@ -117,7 +118,6 @@ let btn_compra = document.getElementsByClassName("botonCompra");
         location.reload()
         
     }
-})
 
 
 

@@ -184,13 +184,13 @@ body {
       .productos > div div h3 {
         margin-bottom: 10px;
         font-size: 20px; }
-      .productos > div div a {
+      .productos > div div button {
         text-decoration: none;
         background-color: black;
         color: white;
         padding: 5px;
         border-radius: 5px; }
-        .productos > div div a:hover {
+        .productos > div div button:hover {
           color: #ffae00; }
 
 .categoria_productos {
