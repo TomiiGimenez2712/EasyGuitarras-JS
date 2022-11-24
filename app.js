@@ -14,6 +14,7 @@ let btn_compra = document.getElementsByClassName("botonCompra");
 
     for (let boton of btn_compra){
         boton.addEventListener("click", agregar_a_carrito);
+        boton.addEventListener("click", alertaagregado);
     }
 
     function agregar_a_carrito(e){
@@ -58,6 +59,9 @@ let btn_compra = document.getElementsByClassName("botonCompra");
         if(recuperando_carrito){
             mostrar_carrito(recuperando_carrito)
         }
+        else{
+            alertavaciado();
+        }
     }
     
     
@@ -80,19 +84,10 @@ let btn_compra = document.getElementsByClassName("botonCompra");
             let btn_borrar = document.querySelectorAll(".borrar_elemento");
             for( let boton of btn_borrar){
                 boton.addEventListener("click" , borrar_producto);
+                boton.addEventListener("click" , alertaborrado);
             }
         });
-    
-        //vaciar carrito
-        let btn_vaciar = document.querySelectorAll(".vaciar_carrito");
-        
-        for( let boton of btn_vaciar){
-            boton.addEventListener("click" , vaciar_carrito);
-        }
-        
-        }
-    
-    
+    }
     
     
     
@@ -119,13 +114,50 @@ let btn_compra = document.getElementsByClassName("botonCompra");
         
     }
 
+    //LIBRERIAS DE ALERTAS
 
+    function alertaagregado(){
+        Toastify({
 
+            text:"Producto agregado al carrito",
+            duration:1500,
+            gravity:"bottom",
+            position:"left",
+            style:{
+                fontFamily:"Spinnaker",
+                color:"white",
+                background:"rgb(255, 174, 0)"
+            }
+        }).showToast();
+    }
+    function alertavaciado(){
+        Toastify({
 
+            text:"Carrito vacio",
+            duration:1500,
+            gravity:"bottom",
+            position:"left",
+            style:{
+                fontFamily:"Spinnaker",
+                color:"white",
+                background:"#28A745"
+            }
+        }).showToast();
+    }
+    function alertaborrado(){
+        Toastify({
 
-
-
-
+            text:"Producto borrado",
+            duration:1500,
+            gravity:"bottom",
+            position:"left",
+            style:{
+                fontFamily:"Spinnaker",
+                color:"white",
+                background:"#DC3545"
+            }
+        }).showToast();
+    }
 
 
 
